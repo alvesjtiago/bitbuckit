@@ -1,6 +1,7 @@
 # Bitbuckit 💎
 
-Ruby kit for the Bitbucket API.
+Ruby kit for the Bitbucket API v2.0.
+(This is still a work in progress and it's not ready for production use.)
 
 ## Installation
 
