@@ -1,0 +1,19 @@
+inherit_gem:
+  rubocop-rails_config:
+    - config/rails.yml
+
+AllCops:
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  ExtraDetails: false
+  TargetRubyVersion: 2.5.1
+  Exclude:
+    - lib/tasks/cucumber.rake
+    - features/support/env.rb
+    - bin/rails
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/BracesAroundHashParameters:
+  EnforcedStyle: context_dependent
