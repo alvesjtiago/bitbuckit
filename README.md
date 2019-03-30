@@ -1,4 +1,4 @@
-# Bitbuckit 
+# Bitbuckit 💎
 
 Ruby kit for the Bitbucket API.
 
