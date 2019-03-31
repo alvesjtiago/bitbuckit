@@ -1,13 +1,43 @@
-/.bundle/
-/.yardoc
-/_yardoc/
+*.gem
+*.rbc
+.bundle
+Gemfile.lock
+*.bundle
+*.so
+*.o
+*.a
+mkmf.log
+app.rb
+log/
+*.swp
+
+features
+.envrc
+.byebug_history
+.ruby-version
+
+## from github ignore.
+
+/.config
 /coverage/
-/doc/
+/InstalledFiles
 /pkg/
-/spec/reports/
 /tmp/
+/spec/reports/
+
+## Documentation cache and generated files:
+/.yardoc/
+/_yardoc/
+/doc/
+/rdoc/
+
+## Environment normalisation:
+/.bundle/
+/lib/bundler/man/
+/vendor/
+*.iml
 
 # rspec failure tracking
 .rspec_status
+
 .DS_Store
-*.gem
