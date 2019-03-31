@@ -27,6 +27,11 @@ client = Bitbuckit::Client.new(:access_token => '[personal_access_token]!')
 
 # Get information about the current logged in Bitbucket user
 client.user
+
+# Get commits (1st page)
+commits = bit.commits("atlassian", "atlassian-connect-express")
+# Get next commits
+next_commits = bit.get(bit.last_response.data.next)
 ```
 
 ## Development
