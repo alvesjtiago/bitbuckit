@@ -15,7 +15,7 @@ module Bitbuckit
 
     def initialize(options = {})
       @access_token = options[:access_token]
-      @refresh_tokeb = options[:refresh_token]
+      @refresh_token = options[:refresh_token]
     end
   end
 end

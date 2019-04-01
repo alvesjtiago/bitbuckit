@@ -6,7 +6,7 @@ module Bitbuckit
     include Bitbuckit::Authentication
 
     def get(url, options = {})
-      request(:get, url, options).values
+      request(:get, url, options)
     end
 
     def post(url, options = {})
@@ -20,12 +20,14 @@ module Bitbuckit
     def paginate(url, options = {}, &block)
       data = request(:get, url, options.dup)
 
-      while @last_response.data.next
-        request(:get, @last_response.data.next, options.dup)
-        if block_given?
-          yield(data.values, @last_response.data.values)
-        else
-          data.values.concat(@last_response.data.values)
+      if options[:auto_paginate]
+        while @last_response.data.next
+          request(:get, @last_response.data.next, options.dup)
+          if block_given?
+            yield(data.values, @last_response.data.values)
+          else
+            data.values.concat(@last_response.data.values)
+          end
         end
       end
 
@@ -63,6 +65,8 @@ module Bitbuckit
         opts = { query: data }
 
         @last_response = response = agent.call(method, Addressable::URI.parse(path.to_s).normalize.to_s, data, opts)
+
+        puts response.inspect
         response.data
       end
   end
